@@ -1,6 +1,6 @@
 package EmployeeManagement;
 
-public class Engineer extends Employee{
+public class Engineer extends Employee {
 
 		private String trainingBranch;
 
