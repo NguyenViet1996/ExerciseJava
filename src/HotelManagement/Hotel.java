@@ -17,8 +17,18 @@ public class Hotel {
 		}
 
 		public void deleteCustomer(String identityCardNumber) {
-				this.listCustomer = this.listCustomer.stream().filter(customer -> customer.getIdentityCardNumber().equalsIgnoreCase(identityCardNumber)).collect(Collectors.toList());
+				this.listCustomer = this.listCustomer.stream().filter(customer -> !customer.getIdentityCardNumber()
+						.equalsIgnoreCase(identityCardNumber)).collect(Collectors.toList());
 		}
+
+		// different solution to delete record
+//		public void deleteCustomer(String identityCardNumber) {
+//				for (int i = 0;i < this.listCustomer.size(); i++) {
+//						if(this.listCustomer.get(i).getIdentityCardNumber().equalsIgnoreCase(identityCardNumber)) {
+//								this.listCustomer.remove(i);
+//						}
+//				}
+//		}
 
 		public void caculateMoneyRent() {
 				for (Customer customer : this.listCustomer) {

@@ -2,6 +2,8 @@ package CompanyManagement.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class ManagerEmployee {
@@ -12,22 +14,20 @@ public class ManagerEmployee {
 				this.listEmployee = new ArrayList<>();
 		}
 
-    public void addNewEmployee(Employee employee) {
+    public void insert(Employee employee) {
 				this.listEmployee.add(employee);
 		}
 
-		public  void updateInfoEmployee(int number) {
-				for (Employee employee : this.listEmployee) {
-						if (employee.getNumberEmployee() == number) {
-
-						}
-				}
+		public void delete(int id) {
+				this.listEmployee = this.listEmployee.stream().filter(employee -> employee.getIdEmployee()!=id).collect(Collectors.toList());
 		}
 
-    public void deleteEmployee(int number) {
-				this.listEmployee = this.listEmployee.stream().filter(employee -> employee.getNumberEmployee()!=number).collect(Collectors.toList());
+		public void update(int id, Scanner scanner) {
+				Optional<Employee> foundEmployee = this.listEmployee.stream().filter(employee -> employee.getIdEmployee() == id).findFirst();
+//        if (foundEmployee.isPresent()) {
+//						System.out.println("The employee that you want to update is " + found);
+//
+//				}
 		}
-
-
 
 }

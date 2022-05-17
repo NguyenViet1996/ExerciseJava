@@ -1,8 +1,8 @@
-package VehicleManagement;
+package VehicleManagement.model;
 
-public class Truck extends Vehicle{
+public class Truck extends Vehicle {
 
-		private double tonnage;
+		private final double tonnage;
 
 		public Truck(int numberId, String manufacturer, int yearOfManufacture, double price, String color,double tonnage) {
 				super(numberId, manufacturer, yearOfManufacture, price, color);
@@ -13,19 +13,16 @@ public class Truck extends Vehicle{
 				return tonnage;
 		}
 
-		public void setTonnage(double tonnage) {
-				this.tonnage = tonnage;
-		}
-
 		@Override
 		public String toString() {
-				return "The bike { id : " +
-						this.getNumberId() + ", manufacturer : " +
+				return "The Truck { id : " +
+						this.getId() + ", manufacturer : " +
 						this.getManufacturer() + ", the year of manufacturing : " +
 						this.getYearOfManufacture() + ", the tonnage : " +
 						this.getTonnage() + ", the price : " +
 						this.getPrice() + ", the color : " +
-						this.getColor() + "}";
+						this.getColor() + ", the tonnage : " +
+						this.getTonnage() + "}";
 		}
 
 }

@@ -1,10 +1,14 @@
 package CompanyManagement.Exception;
 
-public class EmailException extends Exception{
+public class EmailException extends Exception {
 
-		@Override
-		public void showException() {
-				System.out.println("Email is not valid");
+		EmailException() {
+		}
+
+		EmailException(String message) {
+				super(message);
+				String MESSAGE = "Email is not valid";
+				message = message != null ? message : MESSAGE;
 		}
 
 }

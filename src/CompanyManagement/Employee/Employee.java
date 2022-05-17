@@ -2,29 +2,29 @@ package CompanyManagement.Employee;
 
 public abstract class Employee {
 
-		private int numberEmployee;
+		private int idEmployee;
 		private String name;
 		private String birthday;
 		private String phone;
 		private String email;
-		private String employee_type;
-		private static int employee_count = 0;
+		private String typeOfEmployee;
+//		private static int employee_count = 0;
 
-		public Employee(int numberEmployee,String name, String birthday, String phone, String email, String employee_type) {
-				this.numberEmployee = numberEmployee;
+		public Employee(int idEmployee, String name, String birthday, String phone, String email, String typeOfEmployee) {
+				this.idEmployee = idEmployee;
 				this.name = name;
 				this.birthday = birthday;
 				this.phone = phone;
 				this.email = email;
-				this.employee_type = employee_type;
+				this.typeOfEmployee = typeOfEmployee;
 		}
 
-		public int getNumberEmployee() {
-				return numberEmployee;
+		public int getIdEmployee() {
+				return idEmployee;
 		}
 
-		public void setNumberEmployee(int numberEmployee) {
-				this.numberEmployee = numberEmployee;
+		public void setIdEmployee(int idEmployee) {
+				this.idEmployee = idEmployee;
 		}
 
 		public String getName() {
@@ -59,14 +59,14 @@ public abstract class Employee {
 				this.email = email;
 		}
 
-		public String getEmployee_type() {
-				return employee_type;
+		public String getTypeOfEmployee() {
+				return typeOfEmployee;
 		}
 
-		public void setEmployee_type(String employee_type) {
-				this.employee_type = employee_type;
+		public void setTypeOfEmployee(String typeOfEmployee) {
+				this.typeOfEmployee = typeOfEmployee;
 		}
 
-    public abstract void showInfo();
+		public abstract void showInfo();
 
 }

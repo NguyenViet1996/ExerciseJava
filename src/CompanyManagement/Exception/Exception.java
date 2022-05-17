@@ -1,7 +1,7 @@
 package CompanyManagement.Exception;
 
- abstract  class Exception {
-
-		public abstract void showException();
-
- }
+// abstract  class Exception {
+//
+//		public abstract void showException();
+//
+// }

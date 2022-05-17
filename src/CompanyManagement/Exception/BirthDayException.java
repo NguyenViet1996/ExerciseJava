@@ -2,9 +2,15 @@ package CompanyManagement.Exception;
 
 public class BirthDayException extends Exception {
 
-		@Override
-		public void showException() {
-				System.out.println("Birthday is not valid");
+		String message;
+
+		BirthDayException() {
+		}
+
+		BirthDayException(String message) {
+				super(message);
+				String MESSAGE = "Birthday is not valid";
+				this.message = message != null ? message : MESSAGE;
 		}
 
 }

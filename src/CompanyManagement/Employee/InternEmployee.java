@@ -4,13 +4,14 @@ public class InternEmployee extends Employee {
 
     private String majors;
 		public String semester;
-		public String university_name;
+		public String nameOfUniversity;
 
-		public InternEmployee(int numberEmployee, String name, String birthday, String phone, String email, String employee_type, String majors, String semester, String university_name) {
-				super(numberEmployee, name, birthday, phone, email, employee_type);
+		public InternEmployee(int numberEmployee, String name, String birthday, String phone, String email,
+													String typeOfEmployee, String majors, String semester, String nameOfUniversity) {
+				super(numberEmployee, name, birthday, phone, email, typeOfEmployee);
 				this.majors = majors;
 				this.semester =semester;
-				this.university_name = university_name;
+				this.nameOfUniversity = nameOfUniversity;
 		}
 
 		public String getMajors() {
@@ -29,29 +30,42 @@ public class InternEmployee extends Employee {
 				this.semester = semester;
 		}
 
-		public String getUniversity_name() {
-				return university_name;
+		public String getNameOfUniversity() {
+				return nameOfUniversity;
 		}
 
-		public void setUniversity_name(String university_name) {
-				this.university_name = university_name;
+		public void setNameOfUniversity(String nameOfUniversity) {
+				this.nameOfUniversity = nameOfUniversity;
 		}
 
 		@Override
 		public void showInfo() {
 				System.out.println("the Experience Employee : { " +
-						" number of employee : " + this.getNumberEmployee() +
+						" number of employee : " + this.getIdEmployee() +
 						", full of name : " + this.getName() +
 						", birthday : " + this.getBirthday() +
 						", phone : " + this.getPhone() +
 						", email : " + this.getEmail() +
-						", type of employee : " + this.getEmployee_type() +
+						", type of employee : " + this.getTypeOfEmployee() +
 						",the majors: " + this.getMajors() +
 						", the semester : " + this.getSemester() +
-						", the name of university: " + this.getUniversity_name() +
+						", the name of university: " + this.getNameOfUniversity() +
 						"}"
 				);
 
+		}
+
+		public void update(int idEmployee, String name, String birthday, String phone, String email, String typeOfEmployee,
+											 String majors, String semester, String nameOfUniversity) {
+				this.setIdEmployee(idEmployee);
+				this.setName(name);
+				this.setBirthday(birthday);
+				this.setPhone(phone);
+				this.setEmail(email);
+				this.setTypeOfEmployee(typeOfEmployee);
+				this.setMajors(majors);
+				this.setSemester(semester);
+				this.setNameOfUniversity(nameOfUniversity);
 		}
 
 }

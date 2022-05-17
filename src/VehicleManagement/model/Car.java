@@ -1,9 +1,9 @@
-package VehicleManagement;
+package VehicleManagement.model;
 
-public class Car extends Vehicle{
+public class Car extends Vehicle {
 
-		private int numberOfSeats;
-		private String typeOfEngine;
+		private final int numberOfSeats;
+		private final String typeOfEngine;
 
 		public Car(int numberId, String manufacturer, int yearOfManufacture, double price, String color, int numberOfSeats, String typeOfEngine) {
 				super(numberId, manufacturer, yearOfManufacture, price, color);
@@ -15,27 +15,21 @@ public class Car extends Vehicle{
 				return numberOfSeats;
 		}
 
-		public void setNumberOfSeats(int numberOfSeats) {
-				this.numberOfSeats = numberOfSeats;
-		}
-
 		public String getTypeOfEngine() {
 				return typeOfEngine;
-		}
-
-		public void setTypeOfEngine(String typeOfEngine) {
-				this.typeOfEngine = typeOfEngine;
 		}
 
 		@Override
 		public String toString() {
 				return "The car { id : " +
-						this.getNumberId() + ", manufacturer : " +
+						this.getId() + ", manufacturer : " +
 						this.getManufacturer() + ", the year of manufacturing : " +
 						this.getYearOfManufacture() + ", the number of seats : " +
 						this.getNumberOfSeats() + ", the price : " +
 						this.getPrice() + ", the color : " +
-						this.getColor() + "}";
+						this.getColor() + ", hte number of seats :" +
+						this.getNumberOfSeats() + ", the type of engine: " +
+						this.getTypeOfEngine() + "}";
 		}
 
 }
