@@ -2,11 +2,11 @@ package EmployeeManagement;
 
 public class Employee {
 
-		private String name, gender,address;
+	private String name, gender,address;
 		private int age;
 
 		public Employee(String name,String gender,String address,int age) {
-         this.name = name;
+                 this.name = name;
 				 this.gender = gender;
 				 this.address = address;
 				 this.age = age;
@@ -16,7 +16,7 @@ public class Employee {
 				this.name = name;
 		}
 
-    public String getName() {
+        public String getName() {
 				return this.name;
 		}
 
@@ -36,7 +36,7 @@ public class Employee {
 				return this.address;
 		}
 
-    public void setAge(int age) {
+        public void setAge(int age) {
 				this.age = age;
 		}
 
