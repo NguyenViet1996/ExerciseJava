@@ -33,17 +33,27 @@ public class Manager {
     public void viewSumPriceBook() {
         double sumPriceReferenceBook = 0;
         double sumPriceTextBook = 0;
-        for (Book book : this.listBook) {
-            if (book instanceof TextBook) {
+        List<Book> listTexBook = this.listBook.stream().filter(book -> book instanceof TextBook).collect(Collectors.toList());
+        List<Book> listReferenceBook = this.listBook.stream().filter(book -> book instanceof ReferenceBook).collect(Collectors.toList());
+        if (listTexBook.size() == 0) {
+            System.out.println("The list book do not have a text book");
+        } else {
+            for (Book book : listTexBook) {
                 sumPriceTextBook += book.caculate();
-            } else if (book instanceof ReferenceBook) {
+            }
+            System.out.println("the total price of text book : "
+                + sumPriceTextBook);
+        }
+        if (listReferenceBook.size() == 0) {
+            System.out.println("The list book do not have a reference book");
+        } else {
+            for (Book book : listReferenceBook) {
                 sumPriceReferenceBook += book.caculate();
             }
+            System.out.println("the total price of reference book : "
+                    + sumPriceReferenceBook);
         }
-        System.out.println(sumPriceReferenceBook != 0 ? "the total price of reference book : "
-                + sumPriceReferenceBook : "The list book do not have a reference book" );
-        System.out.println(sumPriceTextBook != 0 ? "the total price of text book : "
-                + sumPriceTextBook : "The list book do not have a text book" );
+
     }
 
     public void findBook(String name) {
