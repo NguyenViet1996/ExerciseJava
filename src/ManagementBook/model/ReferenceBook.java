@@ -5,7 +5,7 @@ public class ReferenceBook extends Book {
     private final double tax;
 
     public ReferenceBook(String typeOfBook, int id, String dateAdd, double price, double quantity, String author, double tax) {
-        super(typeOfBook, id, dateAdd, price, quantity, author);
+        super(id, dateAdd, price, quantity, author);
         this.tax = tax;
     }
 

@@ -1,6 +1,8 @@
 package ManagementBook.business;
 
 import ManagementBook.model.Book;
+import ManagementBook.model.ReferenceBook;
+import ManagementBook.model.TextBook;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +33,10 @@ public class Manager {
     public void viewSumPriceBook() {
         double sumPriceReferenceBook = 0;
         double sumPriceTextBook = 0;
-        String referenceBook = "reference book";
-        String textBook = "text book";
         for (Book book : this.listBook) {
-            if (book.getTypeOfBook().equalsIgnoreCase(textBook)) {
+            if (book instanceof TextBook) {
                 sumPriceTextBook += book.caculate();
-            } else if (book.getTypeOfBook().equalsIgnoreCase(referenceBook)) {
+            } else if (book instanceof ReferenceBook) {
                 sumPriceReferenceBook += book.caculate();
             }
         }
@@ -47,7 +47,7 @@ public class Manager {
     }
 
     public void findBook(String name) {
-        List<Book> listTextBookFind = this.listBook.stream().filter(book -> book.getTypeOfBook().equalsIgnoreCase("text book")
+        List<Book> listTextBookFind = this.listBook.stream().filter(book -> book instanceof TextBook
                 && book.getAuthor().equalsIgnoreCase(name)).collect(Collectors.toList());
         if (listTextBookFind.size() != 0) {
             for (Book book : listTextBookFind) {

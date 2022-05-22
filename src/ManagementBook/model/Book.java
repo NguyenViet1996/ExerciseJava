@@ -2,15 +2,13 @@ package ManagementBook.model;
 
 public abstract class Book {
 
-    private final String typeOfBook;
     private final int id;
     private final String dateImport;
     private final double price;
     private final double quantity;
     private final String author;
 
-    public Book(String typeOfBook, int id, String dateImport, double price, double quantity, String author) {
-        this.typeOfBook = typeOfBook;
+    public Book(int id, String dateImport, double price, double quantity, String author) {
         this.id = id;
         this.dateImport = dateImport;
         this.price = price;
@@ -18,9 +16,6 @@ public abstract class Book {
         this.author = author;
     }
 
-    public String getTypeOfBook() {
-        return typeOfBook;
-    }
 
     public int getId() {
         return id;
