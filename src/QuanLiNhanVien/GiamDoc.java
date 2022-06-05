@@ -18,6 +18,11 @@ public class GiamDoc extends NhanSu {
     }
 
     @Override
+    public double tinhLuong() {
+        return this.getLuongMoiNgay() * this.getSoNgayLamViec();
+    }
+
+    @Override
     public String toString() {
         return "Giam dôc : {" +
                 "Ma so : " + this.getMaSo() +
@@ -26,13 +31,8 @@ public class GiamDoc extends NhanSu {
                 ", So ngay lam viec : " + this.getSoNgayLamViec() +
                 ", luong 1 ngay : " + this.getLuongMoiNgay() +
                 ", Sô cô phân : " + this.getCoPhan() +
+                ", tong luong : " + this.tinhLuong() +
                 '}';
     }
-
-    @Override
-    public void tinhLuong() {
-        double luong = this.getLuongMoiNgay() * this.getSoNgayLamViec();
-    }
-
 
 }

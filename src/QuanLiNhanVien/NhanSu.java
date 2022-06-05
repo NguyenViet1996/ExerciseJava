@@ -2,10 +2,10 @@ package QuanLiNhanVien;
 
 public abstract class NhanSu {
 
-    private int maSo;
-    private String hoTen;
-    private String soDienThoai;
-    private int soNgayLamViec;
+    private final int maSo;
+    private final String hoTen;
+    private final String soDienThoai;
+    private final int soNgayLamViec;
 
     public NhanSu(int maSo, String hoTen, String soDienThoai, int soNgayLamViec) {
         this.maSo = maSo;
@@ -18,34 +18,18 @@ public abstract class NhanSu {
         return maSo;
     }
 
-    public void setMaSo(int maSo) {
-        this.maSo = maSo;
-    }
-
     public String getHoTen() {
         return hoTen;
-    }
-
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
     }
 
     public String getSoDienThoai() {
         return soDienThoai;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        this.soDienThoai = soDienThoai;
-    }
-
     public int getSoNgayLamViec() {
         return soNgayLamViec;
     }
 
-    public void setSoNgayLamViec(int soNgayLamViec) {
-        this.soNgayLamViec = soNgayLamViec;
-    }
-
-    public abstract void tinhLuong();
+    public abstract double tinhLuong();
 
 }

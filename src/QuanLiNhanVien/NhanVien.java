@@ -22,6 +22,11 @@ public class NhanVien extends NhanSu {
     }
 
     @Override
+    public double tinhLuong() {
+        return this.getLuongMoiNgay() * this.getSoNgayLamViec();
+    }
+
+    @Override
     public String toString() {
         return "Nhan vien thường : {" +
                 "Ma so : " + this.getMaSo() +
@@ -30,11 +35,8 @@ public class NhanVien extends NhanSu {
                 ", So ngay lam viec : " + this.getSoNgayLamViec() +
                 ", luong 1 ngay : " + this.getLuongMoiNgay() +
                 ", truong phong là : " + this.getTruongPhong() +
+                ",tong luong : " + this.tinhLuong() +
                 '}';
     }
 
-    @Override
-    public void tinhLuong() {
-        double luong = this.getLuongMoiNgay() * this.getSoNgayLamViec();
-    }
 }

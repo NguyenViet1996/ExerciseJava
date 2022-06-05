@@ -2,10 +2,14 @@ package QuanLiNhanVien;
 
 public class TruongPhong extends NhanSu {
 
-    private final int soLuongNhanVien;
+    private int soLuongNhanVien;
 
     public TruongPhong(int maSo, String hoTen, String soDienThoai, int soNgayLamViec, int soLuongNhanVien) {
         super(maSo, hoTen, soDienThoai, soNgayLamViec);
+        this.soLuongNhanVien = soLuongNhanVien;
+    }
+
+    public void setSoLuongNhanVien(int soLuongNhanVien) {
         this.soLuongNhanVien = soLuongNhanVien;
     }
 
@@ -18,6 +22,11 @@ public class TruongPhong extends NhanSu {
     }
 
     @Override
+    public double tinhLuong() {
+        return this.getLuongMoiNgay() * this.getSoNgayLamViec() + 100 * this.getSoLuongNhanVien();
+    }
+
+    @Override
     public String toString() {
         return "Truong phong : {" +
                 "Ma so : " + this.getMaSo() +
@@ -26,13 +35,8 @@ public class TruongPhong extends NhanSu {
                 ", So ngay lam viec : " + this.getSoNgayLamViec() +
                 ", luong 1 ngay : " + this.getLuongMoiNgay() +
                 ", Sô nhân vien : " + this.getSoLuongNhanVien() +
+                ", tong luong : " + this.tinhLuong() +
                 '}';
     }
-
-    @Override
-    public void tinhLuong() {
-        double luong = this.getLuongMoiNgay() * this.getSoNgayLamViec() + 100 * this.getSoLuongNhanVien();
-    }
-
 
 }

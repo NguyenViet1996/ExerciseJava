@@ -2,15 +2,14 @@ package QuanLiNhanVien;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class CongTy {
 
     private String thongTinCongTy;
-    private List<NhanSu> danhSachNhanVien;
-    public static final String NHANVIEN = "Nhân viên";
-    public static final String TRUONGPHONG = "Trưởng phòng";
-    public static final String GIAMDOC = "Giam đốc";
+    private final List<NhanSu> danhSachNhanVien;
+    private static final String NHANVIEN = "Nhan vien";
+    private static final String TRUONGPHONG = "Truong phong";
+    private static final String GIAMDOC = "Giam đoc";
 
     public CongTy() {
         this.danhSachNhanVien = new ArrayList<>();
@@ -24,6 +23,10 @@ public class CongTy {
         this.thongTinCongTy = thongTinCongTy;
     }
 
+    /**
+     * them nhan vien
+     * @param nhanSu
+     */
     public void themNhanVien(NhanSu nhanSu) {
         this.danhSachNhanVien.add(nhanSu);
     }
@@ -148,6 +151,7 @@ public class CongTy {
 
     public void xuatThongTinNhanVien() {
         if (this.danhSachNhanVien.size() > 0) {
+            System.out.println(this.getThongTinCongTy());
             for (NhanSu nhansu : this.danhSachNhanVien) {
                 System.out.println(nhansu);
             }
