@@ -1,24 +1,24 @@
-package QuanLiNhanVien;
+package QuanLiNhanVien.model;
 
 public class GiamDoc extends NhanSu {
 
-    private final double coPhan;
+    private final Double coPhan;
 
-    public GiamDoc(int maSo, String hoTen, String soDienThoai, int soNgayLamViec, double coPhan) {
+    public GiamDoc(Integer maSo, String hoTen, String soDienThoai, Integer soNgayLamViec, Double coPhan) {
         super(maSo, hoTen, soDienThoai, soNgayLamViec);
         this.coPhan = coPhan;
     }
 
-    public double getCoPhan() {
+    public Double getCoPhan() {
         return coPhan;
     }
 
-    public double getLuongMoiNgay() {
+    public Integer getLuongMoiNgay() {
         return 300;
     }
 
     @Override
-    public double tinhLuong() {
+    public Integer tinhLuong() {
         return this.getLuongMoiNgay() * this.getSoNgayLamViec();
     }
 

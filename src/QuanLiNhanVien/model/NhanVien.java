@@ -1,28 +1,28 @@
-package QuanLiNhanVien;
+package QuanLiNhanVien.model;
 
 public class NhanVien extends NhanSu {
 
-    private String truongPhong;
+    private Integer idTruongPhong;
 
-    public NhanVien(int maSo, String hoTen, String soDienThoai, int soNgayLamViec, String truongPhong) {
+    public NhanVien(Integer maSo, String hoTen, String soDienThoai, Integer soNgayLamViec, Integer idTruongPhong) {
         super(maSo, hoTen, soDienThoai, soNgayLamViec);
-        this.truongPhong = truongPhong;
+        this.idTruongPhong = idTruongPhong;;
     }
 
-    public void setTruongPhong(String truongPhong) {
-        this.truongPhong = truongPhong;
+    public void setIdTruongPhong(Integer idTruongPhong) {
+        this.idTruongPhong = idTruongPhong;
     }
 
-    public String getTruongPhong() {
-        return truongPhong;
+    public Integer getIdTruongPhong() {
+        return idTruongPhong;
     }
 
-    public double getLuongMoiNgay() {
+    public Integer getLuongMoiNgay() {
         return 100;
     }
 
     @Override
-    public double tinhLuong() {
+    public Integer tinhLuong() {
         return this.getLuongMoiNgay() * this.getSoNgayLamViec();
     }
 
@@ -34,7 +34,7 @@ public class NhanVien extends NhanSu {
                 ", So dien thoai : " + this.getSoDienThoai() +
                 ", So ngay lam viec : " + this.getSoNgayLamViec() +
                 ", luong 1 ngay : " + this.getLuongMoiNgay() +
-                ", truong phong là : " + this.getTruongPhong() +
+                ", truong phong là : " + this.getIdTruongPhong() +
                 ",tong luong : " + this.tinhLuong() +
                 '}';
     }

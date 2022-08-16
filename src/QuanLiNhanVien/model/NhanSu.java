@@ -1,20 +1,20 @@
-package QuanLiNhanVien;
+package QuanLiNhanVien.model;
 
 public abstract class NhanSu {
 
-    private final int maSo;
+    private final Integer maSo;
     private final String hoTen;
     private final String soDienThoai;
-    private final int soNgayLamViec;
+    private final Integer soNgayLamViec;
 
-    public NhanSu(int maSo, String hoTen, String soDienThoai, int soNgayLamViec) {
+    public NhanSu(Integer maSo, String hoTen, String soDienThoai, Integer soNgayLamViec) {
         this.maSo = maSo;
         this.hoTen = hoTen;
         this.soDienThoai = soDienThoai;
         this.soNgayLamViec = soNgayLamViec;
     }
 
-    public int getMaSo() {
+    public Integer getMaSo() {
         return maSo;
     }
 
@@ -26,10 +26,10 @@ public abstract class NhanSu {
         return soDienThoai;
     }
 
-    public int getSoNgayLamViec() {
+    public Integer getSoNgayLamViec() {
         return soNgayLamViec;
     }
 
-    public abstract double tinhLuong();
+    public abstract Integer tinhLuong();
 
 }
